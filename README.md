@@ -1,27 +1,13 @@
-# Vue 3 + Typescript + Vite
-
-This template should help get you started developing with Vue 3 and Typescript in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
-
-### If Using `<script setup>`
-
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
-
-## Type Support For `.vue` Imports in TS
-
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
-
-### If Using Volar
-
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
-
-### If Using Vetur
-
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+# Vue 3 + Typescript + Vite + TDD
+Setting up the side project boilerplate with Vite is little tedious rather than setting project up with Vue cli.
+Vue cli use webpack as the module bundler, it is kind of slow in the development process. Therefore, I create this vue side project boilderplate with vite for the best development experience.
+## Basic Skeleton
+In basic skeleton, I use **vuex**, **vue_router** and data fetching with **swrv**.
+## Code Style
+For code style, I use editorconfig, prettier, and eslint. For the linter, I use all of the plugin [ essential, strongly-recommended, recommended] of Vue3 style guideline. And typescript plugin and jest. Finally, I use **husky** as pre-commit hook to enforce validation of the linting standard and coding format of the project.
+## Git Commit Message Conventions
+For the commit conventions, I use **Commitizen** and **husky + commitlint** to enforce validation in the commit message.
+Usage for the commit - **yarn cz** instead of **git commit**.
+## Unit Test
+**vue-test-utils**, **jest**, **vue-jest**, **ts-jest**
+Finally, I use husky as the pre-push hook to validate all the testing during pushing to the remote repo.
